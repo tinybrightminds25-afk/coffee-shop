@@ -1,0 +1,1353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#2b1b17">
+    <title>Brew & Bloom Coffee House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* All styles are scoped to this widget so Elementor/theme styles remain untouched. */
+        .brew-bloom-site {
+            --espresso: #2b1b17;
+            --coffee: #3b261e;
+            --cream: #fff8ef;
+            --latte: #e9d7c3;
+            --gold: #c58b50;
+            --muted: #76675f;
+            --line: #eaded2;
+            color: var(--espresso);
+            background: var(--cream);
+            font-family: Inter, Arial, sans-serif;
+            line-height: 1.65;
+            overflow: hidden
+        }
+
+        .brew-bloom-site * {
+            box-sizing: border-box
+        }
+
+        .brew-bloom-site img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            object-position: center
+        }
+
+        .brew-bloom-site a {
+            color: inherit;
+            text-decoration: none !important;
+            border-bottom: 0 !important
+        }
+
+        .brew-bloom-site a:hover {
+            text-decoration: none !important;
+            border-bottom: 0 !important
+        }
+
+        .brew-bloom-site button,
+        .brew-bloom-site input,
+        .brew-bloom-site select,
+        .brew-bloom-site textarea {
+            font: inherit
+        }
+
+        .brew-bloom-site button {
+            cursor: pointer
+        }
+
+        .brew-bloom-site button:focus-visible,
+        .brew-bloom-site a:focus-visible,
+        .brew-bloom-site input:focus-visible,
+        .brew-bloom-site select:focus-visible,
+        .brew-bloom-site textarea:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px
+        }
+
+        .brew-bloom-site .bb-container {
+            width: min(1180px, calc(100% - 44px));
+            margin: auto
+        }
+
+        .brew-bloom-site .bb-section {
+            padding: 82px 0
+        }
+
+        .brew-bloom-site .bb-eyebrow {
+            font: 600 .75rem Poppins, sans-serif;
+            letter-spacing: .19em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 0 0 12px
+        }
+
+        .brew-bloom-site h1,
+        .brew-bloom-site h2,
+        .brew-bloom-site h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            line-height: 1.12;
+            margin: 0 0 18px;
+            color: var(--espresso)
+        }
+
+        .brew-bloom-site h1 {
+            font-size: clamp(2.8rem, 6vw, 5.6rem);
+            letter-spacing: -.04em
+        }
+
+        .brew-bloom-site h2 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            letter-spacing: -.025em
+        }
+
+        .brew-bloom-site h3 {
+            font-size: 1.45rem
+        }
+
+        .brew-bloom-site p {
+            margin: 0 0 18px;
+            color: var(--muted)
+        }
+
+        .brew-bloom-site .bb-lead {
+            font-size: 1.08rem;
+            max-width: 650px
+        }
+
+        .brew-bloom-site .bb-center {
+            text-align: center
+        }
+
+        .brew-bloom-site .bb-center .bb-lead {
+            margin-inline: auto
+        }
+
+        .brew-bloom-site .bb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            border: 1px solid var(--espresso);
+            border-radius: 999px;
+            padding: 13px 22px;
+            background: var(--espresso);
+            color: #fff8ef;
+            font-weight: 600;
+            transition: transform .25s, background .25s, color .25s, box-shadow .25s
+        }
+
+        .brew-bloom-site .bb-btn:hover {
+            transform: translateY(-3px);
+            background: var(--gold);
+            border-color: var(--gold);
+            box-shadow: 0 10px 22px #2b1b1720
+        }
+
+        .brew-bloom-site .bb-btn.bb-light {
+            background: transparent;
+            color: var(--espresso)
+        }
+
+        .brew-bloom-site .bb-btn.bb-light:hover {
+            color: #fff;
+            background: var(--espresso)
+        }
+
+        .brew-bloom-site .bb-btn.bb-small {
+            padding: 9px 15px;
+            font-size: .86rem
+        }
+
+        .brew-bloom-site .bb-link {
+            font-weight: 700;
+            padding-bottom: 4px;
+            text-decoration: none !important;
+            border-bottom: 0 !important
+        }
+
+        .brew-bloom-site .bb-grid {
+            display: grid;
+            gap: 24px
+        }
+
+        .brew-bloom-site .bb-grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .brew-bloom-site .bb-grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .brew-bloom-site .bb-grid-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr))
+        }
+
+        .brew-bloom-site .bb-card {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fffdf9;
+            transition: transform .28s, box-shadow .28s
+        }
+
+        .brew-bloom-site .bb-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 42px #2b1b1712
+        }
+
+        .brew-bloom-site .bb-card-body {
+            padding: 20px
+        }
+
+        .brew-bloom-site .bb-card p {
+            font-size: .91rem
+        }
+
+        .brew-bloom-site .bb-card-image {
+            height: 220px;
+            overflow: hidden;
+            background: var(--latte)
+        }
+
+        .brew-bloom-site .bb-card-image img {
+            height: 100%;
+            transition: transform .5s
+        }
+
+        .brew-bloom-site .bb-card:hover .bb-card-image img {
+            transform: scale(1.06)
+        }
+
+        .brew-bloom-site .bb-price {
+            font-weight: 700;
+            color: var(--coffee);
+            font-variant-numeric: tabular-nums
+        }
+
+        .brew-bloom-site .bb-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px
+        }
+
+        .brew-bloom-site .bb-pill {
+            display: inline-flex;
+            background: #f4e8da;
+            color: var(--coffee);
+            border-radius: 999px;
+            padding: 5px 11px;
+            font-size: .75rem;
+            font-weight: 700
+        }
+
+        .brew-bloom-site .bb-hero {
+            position: relative;
+            min-height: 620px;
+            display: grid;
+            align-items: center;
+            background: var(--espresso);
+            color: var(--cream);
+            isolation: isolate
+        }
+
+        .brew-bloom-site .bb-hero:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #21130feF 0%, #21130fc9 44%, #21130f24 100%), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1900&q=85') center/cover;
+            z-index: -1
+        }
+
+        .brew-bloom-site .bb-hero-inner {
+            padding: 86px 0;
+            max-width: 760px
+        }
+
+        .brew-bloom-site .bb-hero h1,
+        .brew-bloom-site .bb-hero p {
+            color: var(--cream)
+        }
+
+        .brew-bloom-site .bb-hero .bb-eyebrow {
+            color: #e6b77e
+        }
+
+        .brew-bloom-site .bb-hero p {
+            max-width: 600px;
+            font-size: 1.08rem;
+            color: #f1e6db
+        }
+
+        .brew-bloom-site .bb-hero .bb-btn.bb-light {
+            color: var(--cream);
+            border-color: #ffffff9c
+        }
+
+        .brew-bloom-site .bb-hero .bb-btn.bb-light:hover {
+            background: var(--cream);
+            color: var(--espresso)
+        }
+
+        .brew-bloom-site .bb-hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 28px 0
+        }
+
+        .brew-bloom-site .bb-trust {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            color: #f4dfca;
+            font-size: .85rem
+        }
+
+        .brew-bloom-site .bb-trust span:before {
+            content: "✦";
+            color: var(--gold);
+            margin-right: 8px
+        }
+
+        .brew-bloom-site .bb-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center
+        }
+
+        .brew-bloom-site .bb-photo-stack {
+            position: relative;
+            padding: 0 32px 32px 0
+        }
+
+        .brew-bloom-site .bb-photo-stack img {
+            height: 440px;
+            border-radius: 22px
+        }
+
+        .brew-bloom-site .bb-photo-stack:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 55%;
+            height: 45%;
+            border: 8px solid var(--cream);
+            border-radius: 20px;
+            background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=650&q=80') center/cover
+        }
+
+        .brew-bloom-site .bb-soft {
+            background: #f6ecdf
+        }
+
+        .brew-bloom-site .bb-dark {
+            background: var(--espresso);
+            color: var(--cream)
+        }
+
+        .brew-bloom-site .bb-dark h2,
+        .brew-bloom-site .bb-dark h3,
+        .brew-bloom-site .bb-dark p {
+            color: var(--cream)
+        }
+
+        .brew-bloom-site .bb-category {
+            padding: 25px;
+            border-radius: 18px;
+            background: #fffdf9;
+            border: 1px solid var(--line);
+            min-height: 140px;
+            transition: all .25s
+        }
+
+        .brew-bloom-site .bb-category:hover {
+            background: var(--espresso);
+            color: var(--cream);
+            transform: translateY(-4px)
+        }
+
+        .brew-bloom-site .bb-category:hover p,
+        .brew-bloom-site .bb-category:hover h3 {
+            color: var(--cream)
+        }
+
+        .brew-bloom-site .bb-category .bb-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px
+        }
+
+        .brew-bloom-site .bb-process-number {
+            font: 700 2.8rem "Playfair Display", serif;
+            color: #d6b28b
+        }
+
+        .brew-bloom-site .bb-offer {
+            padding: 30px;
+            border-radius: 20px;
+            background: var(--coffee);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden
+        }
+
+        .brew-bloom-site .bb-offer h3,
+        .brew-bloom-site .bb-offer p {
+            color: var(--cream)
+        }
+
+        .brew-bloom-site .bb-offer:after {
+            content: "☕";
+            position: absolute;
+            font-size: 8rem;
+            opacity: .09;
+            right: 0;
+            bottom: -40px;
+            transform: rotate(-15deg)
+        }
+
+        .brew-bloom-site .bb-review-note {
+            font-size: .78rem;
+            color: var(--muted)
+        }
+
+        .brew-bloom-site .bb-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px
+        }
+
+        .brew-bloom-site .bb-gallery button {
+            border: 0;
+            padding: 0;
+            background: none;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative
+        }
+
+        .brew-bloom-site .bb-gallery img {
+            height: 210px;
+            transition: transform .35s
+        }
+
+        .brew-bloom-site .bb-gallery button:hover img {
+            transform: scale(1.06)
+        }
+
+        .brew-bloom-site .bb-newsletter {
+            padding: 48px;
+            border-radius: 24px;
+            background: var(--latte);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 28px
+        }
+
+        .brew-bloom-site .bb-newsletter form {
+            display: flex;
+            gap: 8px;
+            max-width: 470px;
+            width: 100%
+        }
+
+        .brew-bloom-site input,
+        .brew-bloom-site select,
+        .brew-bloom-site textarea {
+            width: 100%;
+            border: 1px solid #d8c8b8;
+            border-radius: 10px;
+            background: #fffdf9;
+            color: var(--espresso);
+            padding: 12px 14px
+        }
+
+        .brew-bloom-site label {
+            display: block;
+            font-size: .86rem;
+            font-weight: 600;
+            margin-bottom: 7px
+        }
+
+        .brew-bloom-site .bb-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px
+        }
+
+        .brew-bloom-site .bb-field {
+            min-width: 0
+        }
+
+        .brew-bloom-site .bb-field.bb-full {
+            grid-column: 1/-1
+        }
+
+        .brew-bloom-site .bb-status {
+            padding: 12px 15px;
+            border-radius: 10px;
+            background: #e5f4e8;
+            color: #245632;
+            margin: 14px 0
+        }
+
+        .brew-bloom-site .bb-page-hero {
+            padding: 75px 0 65px;
+            background: linear-gradient(135deg, #f4e7d7, #fff8ef)
+        }
+
+        .brew-bloom-site .bb-page-hero h1 {
+            font-size: clamp(2.6rem, 5vw, 4.6rem)
+        }
+
+        .brew-bloom-site .bb-breadcrumb {
+            font-size: .83rem;
+            color: var(--muted);
+            margin-bottom: 18px
+        }
+
+        .brew-bloom-site .bb-toolbar {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 28px 0
+        }
+
+        .brew-bloom-site .bb-toolbar input {
+            max-width: 320px
+        }
+
+        .brew-bloom-site .bb-toolbar select {
+            max-width: 220px
+        }
+
+        .brew-bloom-site .bb-product-card .bb-card-image {
+            height: 205px
+        }
+
+        .brew-bloom-site .bb-product-card .bb-card-body {
+            padding: 16px
+        }
+
+        .brew-bloom-site .bb-product-card h3 {
+            font-size: 1.22rem;
+            margin-bottom: 8px
+        }
+
+        .brew-bloom-site .bb-product-card .bb-card-body>p {
+            min-height: 48px;
+            margin-bottom: 10px
+        }
+
+        .brew-bloom-site .bb-product-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin: 12px 0
+        }
+
+        .brew-bloom-site .bb-product-controls select {
+            padding: 8px;
+            font-size: .8rem
+        }
+
+        .brew-bloom-site .bb-cart-shortcut {
+            position: fixed;
+            z-index: 99998;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: var(--gold);
+            color: #fff;
+            text-decoration: none !important;
+            box-shadow: 0 8px 24px #0002;
+            font-weight: 700
+        }
+
+        .brew-bloom-site .bb-cart-shortcut:hover {
+            background: var(--espresso);
+            color: #fff
+        }
+
+        .brew-bloom-site .bb-cart-shortcut {
+            position: fixed;
+            z-index: 99998;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: var(--gold);
+            color: #fff;
+            text-decoration: none !important;
+            box-shadow: 0 8px 24px #0002;
+            font-weight: 700
+        }
+
+        .brew-bloom-site .bb-cart-shortcut:hover {
+            background: var(--espresso);
+            color: #fff
+        }
+
+        .brew-bloom-site .bb-toast {
+            position: fixed;
+            z-index: 99999;
+            right: 20px;
+            bottom: 20px;
+            background: var(--espresso);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px #0002;
+            opacity: 0;
+            transform: translateY(15px);
+            pointer-events: none;
+            transition: .25s
+        }
+
+        .brew-bloom-site .bb-toast.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .brew-bloom-site .bb-cart-layout {
+            display: grid;
+            grid-template-columns: 1.5fr .8fr;
+            gap: 26px;
+            align-items: start
+        }
+
+        .brew-bloom-site .bb-cart-item {
+            display: grid;
+            grid-template-columns: 85px 1fr auto;
+            gap: 16px;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .brew-bloom-site .bb-cart-item img {
+            height: 85px;
+            border-radius: 12px
+        }
+
+        .brew-bloom-site .bb-qty {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 4px 8px
+        }
+
+        .brew-bloom-site .bb-qty button {
+            border: 0;
+            background: transparent;
+            font-size: 1.1rem;
+            padding: 2px 7px
+        }
+
+        .brew-bloom-site .bb-summary {
+            padding: 25px;
+            background: #fffdf9;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            position: sticky;
+            top: 20px
+        }
+
+        .brew-bloom-site .bb-summary-line {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 9px 0;
+            color: var(--muted)
+        }
+
+        .brew-bloom-site .bb-summary-line.total {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--espresso);
+            border-top: 1px solid var(--line);
+            margin-top: 8px;
+            padding-top: 18px
+        }
+
+        .brew-bloom-site .bb-payment-box {
+            background: #f6ecdf;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 12px 0
+        }
+
+        .brew-bloom-site .bb-payment-box p {
+            margin: 0
+        }
+
+        .brew-bloom-site .bb-faq-item {
+            border-bottom: 1px solid var(--line)
+        }
+
+        .brew-bloom-site .bb-faq-item button {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 18px;
+            text-align: left;
+            border: 0;
+            background: transparent;
+            padding: 20px 0;
+            color: var(--espresso);
+            font-weight: 700
+        }
+
+        .brew-bloom-site .bb-faq-answer {
+            padding: 0 0 20px
+        }
+
+        .brew-bloom-site .bb-faq-answer[hidden] {
+            display: none
+        }
+
+        .brew-bloom-site .bb-map-placeholder {
+            min-height: 290px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #e9d7c3, #f8eee2);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 25px
+        }
+
+        .brew-bloom-site .bb-timeline {
+            border-left: 2px solid var(--gold);
+            padding-left: 28px;
+            margin-left: 10px
+        }
+
+        .brew-bloom-site .bb-timeline article {
+            position: relative;
+            padding: 0 0 24px
+        }
+
+        .brew-bloom-site .bb-timeline article:before {
+            content: "";
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 3px solid var(--cream)
+        }
+
+        .brew-bloom-site .bb-lightbox {
+            position: fixed;
+            z-index: 100000;
+            inset: 0;
+            background: #1a100eef;
+            display: none;
+            place-items: center;
+            padding: 30px
+        }
+
+        .brew-bloom-site .bb-lightbox.open {
+            display: grid
+        }
+
+        .brew-bloom-site .bb-lightbox img {
+            max-width: min(100%, 1000px);
+            max-height: 82vh;
+            width: auto;
+            border-radius: 14px
+        }
+
+        .brew-bloom-site .bb-lightbox button {
+            position: absolute;
+            right: 25px;
+            top: 18px;
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.5rem
+        }
+
+        .brew-bloom-site .bb-empty {
+            padding: 36px;
+            text-align: center;
+            background: #fffdf9;
+            border-radius: 18px;
+            border: 1px dashed var(--latte)
+        }
+
+        .brew-bloom-site .bb-reveal {
+            animation: bbRise .7s both
+        }
+
+        .brew-bloom-site .bb-steam {
+            display: inline-block;
+            animation: bbSteam 3s ease-in-out infinite
+        }
+
+        .brew-bloom-site .bb-footer-preview {
+            padding: 32px 0;
+            background: #21140f;
+            color: #fff8ef
+        }
+
+        .brew-bloom-site .bb-footer-preview p {
+            color: #d9c8bb;
+            font-size: .9rem
+        }
+
+        .brew-bloom-site .bb-footer-preview .bb-row {
+            flex-wrap: wrap
+        }
+
+        @keyframes bbRise {
+            from {
+                opacity: 0;
+                transform: translateY(18px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes bbSteam {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: .6
+            }
+
+            50% {
+                transform: translateY(-7px);
+                opacity: 1
+            }
+        }
+
+        @media(max-width:900px) {
+            .brew-bloom-site .bb-grid-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .brew-bloom-site .bb-grid-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .brew-bloom-site .bb-intro-grid {
+                gap: 30px
+            }
+
+            .brew-bloom-site .bb-hero {
+                min-height: 560px
+            }
+
+            .brew-bloom-site .bb-cart-layout {
+                grid-template-columns: 1fr
+            }
+
+            .brew-bloom-site .bb-summary {
+                position: static
+            }
+
+            .brew-bloom-site .bb-newsletter {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .brew-bloom-site .bb-gallery {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:600px) {
+            .brew-bloom-site .bb-container {
+                width: min(100% - 30px, 1180px)
+            }
+
+            .brew-bloom-site .bb-section {
+                padding: 58px 0
+            }
+
+            .brew-bloom-site .bb-grid-2,
+            .brew-bloom-site .bb-grid-3,
+            .brew-bloom-site .bb-grid-4 {
+                grid-template-columns: 1fr
+            }
+
+            .brew-bloom-site .bb-hero {
+                min-height: 600px
+            }
+
+            .brew-bloom-site .bb-hero:before {
+                background: linear-gradient(90deg, #21130feF, #21130fa8), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80') center/cover
+            }
+
+            .brew-bloom-site .bb-hero-inner {
+                padding: 60px 0
+            }
+
+            .brew-bloom-site .bb-intro-grid {
+                grid-template-columns: 1fr
+            }
+
+            .brew-bloom-site .bb-photo-stack img {
+                height: 320px
+            }
+
+            .brew-bloom-site .bb-form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .brew-bloom-site .bb-field.bb-full {
+                grid-column: auto
+            }
+
+            .brew-bloom-site .bb-newsletter {
+                padding: 26px
+            }
+
+            .brew-bloom-site .bb-newsletter form {
+                flex-direction: column
+            }
+
+            .brew-bloom-site .bb-toolbar>* {
+                max-width: none !important;
+                width: 100%
+            }
+
+            .brew-bloom-site .bb-cart-item {
+                grid-template-columns: 64px 1fr;
+                gap: 12px
+            }
+
+            .brew-bloom-site .bb-cart-item img {
+                height: 64px
+            }
+
+            .brew-bloom-site .bb-cart-item .bb-cart-end {
+                grid-column: 2;
+                display: flex;
+                justify-content: space-between;
+                align-items: center
+            }
+
+            .brew-bloom-site .bb-gallery img {
+                height: 150px
+            }
+
+            .brew-bloom-site .bb-page-hero {
+                padding: 55px 0 45px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            .brew-bloom-site *,
+            .brew-bloom-site *:before,
+            .brew-bloom-site *:after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important
+            }
+        }
+
+        .brew-bloom-site .bb-site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 248, 239, .97);
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 5px 24px #2b1b1709;
+            backdrop-filter: blur(12px)
+        }
+
+        .brew-bloom-site .bb-nav-wrap {
+            width: min(1280px, calc(100% - 44px));
+            min-height: 82px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .brew-bloom-site .bb-brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex: none;
+            color: var(--espresso)
+        }
+
+        .brew-bloom-site .bb-brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--espresso);
+            color: #f0c895;
+            font-size: 1.45rem
+        }
+
+        .brew-bloom-site .bb-brand strong {
+            display: block;
+            font: 600 1.12rem "Playfair Display", Georgia, serif;
+            line-height: 1.1
+        }
+
+        .brew-bloom-site .bb-brand small {
+            display: block;
+            font-size: .68rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 4px
+        }
+
+        .brew-bloom-site .bb-site-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(12px, 1.8vw, 25px)
+        }
+
+        .brew-bloom-site .bb-site-nav a {
+            font: 600 .82rem Poppins, Inter, sans-serif;
+            color: var(--coffee);
+            white-space: nowrap;
+            transition: color .2s
+        }
+
+        .brew-bloom-site .bb-site-nav a:hover {
+            color: var(--gold)
+        }
+
+        .brew-bloom-site .bb-header-cart {
+            flex: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 17px;
+            border-radius: 999px;
+            background: var(--espresso);
+            color: var(--cream) !important;
+            font: 600 .82rem Poppins, sans-serif
+        }
+
+        .brew-bloom-site .bb-header-cart:hover {
+            background: var(--gold);
+            color: white !important
+        }
+
+        .brew-bloom-site .bb-nav-toggle {
+            display: none
+        }
+
+        @media(max-width:1000px) {
+            .brew-bloom-site .bb-nav-wrap {
+                min-height: 74px;
+                display: grid;
+                grid-template-columns: 1fr auto auto;
+                gap: 12px;
+                position: relative
+            }
+
+            .brew-bloom-site .bb-nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                background: #fffdf9;
+                color: var(--espresso);
+                padding: 9px 13px;
+                font: 600 .8rem Poppins, sans-serif
+            }
+
+            .brew-bloom-site .bb-menu-icon {
+                width: 17px;
+                display: grid;
+                gap: 4px
+            }
+
+            .brew-bloom-site .bb-menu-icon i {
+                display: block;
+                height: 2px;
+                border-radius: 3px;
+                background: currentColor;
+                transition: transform .2s, opacity .2s
+            }
+
+            .brew-bloom-site .bb-nav-toggle[aria-expanded="true"] .bb-menu-icon i:first-child {
+                transform: translateY(6px) rotate(45deg)
+            }
+
+            .brew-bloom-site .bb-nav-toggle[aria-expanded="true"] .bb-menu-icon i:nth-child(2) {
+                opacity: 0
+            }
+
+            .brew-bloom-site .bb-nav-toggle[aria-expanded="true"] .bb-menu-icon i:last-child {
+                transform: translateY(-6px) rotate(-45deg)
+            }
+
+            .brew-bloom-site .bb-site-nav {
+                display: none;
+                grid-column: 1/-1;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: calc(100% - 1px);
+                padding: 12px;
+                background: #fff8ef;
+                border: 1px solid var(--line);
+                border-radius: 0 0 18px 18px;
+                box-shadow: 0 18px 28px #2b1b1718;
+                align-items: stretch;
+                gap: 3px
+            }
+
+            .brew-bloom-site .bb-site-nav.is-open {
+                display: flex;
+                flex-direction: column
+            }
+
+            .brew-bloom-site .bb-site-nav a {
+                padding: 11px 13px;
+                border-radius: 9px;
+                font-size: .9rem
+            }
+
+            .brew-bloom-site .bb-site-nav a:hover {
+                background: #f4e8da
+            }
+        }
+
+        @media(max-width:520px) {
+            .brew-bloom-site .bb-nav-wrap {
+                width: calc(100% - 28px);
+                min-height: 68px
+            }
+
+            .brew-bloom-site .bb-brand-mark {
+                width: 38px;
+                height: 38px;
+                font-size: 1.25rem
+            }
+
+            .brew-bloom-site .bb-brand strong {
+                font-size: 1rem
+            }
+
+            .brew-bloom-site .bb-brand small {
+                font-size: .6rem
+            }
+
+            .brew-bloom-site .bb-header-cart {
+                padding: 9px 12px;
+                font-size: .75rem
+            }
+
+            .brew-bloom-site .bb-nav-toggle {
+                padding: 9px 11px
+            }
+
+            .brew-bloom-site .bb-toggle-label {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brew-bloom-site" id="brewBloomApp">
+        <header class="bb-site-header">
+            <div class="bb-nav-wrap">
+                <a class="bb-brand" href="#/home" aria-label="Brew and Bloom Coffee House home"><span
+                        class="bb-brand-mark" aria-hidden="true">✿</span><span><strong>Brew &amp;
+                            Bloom</strong><small>Coffee House</small></span></a>
+                <button class="bb-nav-toggle" id="bb-nav-toggle" type="button" aria-expanded="false"
+                    aria-controls="bb-site-nav"><span class="bb-menu-icon"
+                        aria-hidden="true"><i></i><i></i><i></i></span><span
+                        class="bb-toggle-label">Menu</span></button>
+                <nav class="bb-site-nav" id="bb-site-nav" aria-label="Main navigation"><a href="#/home">Home</a><a
+                        href="#/menu">Menu</a><a href="#/shop">Order online</a><a href="#/story">Our story</a><a
+                        href="#/about">About</a><a href="#/offers">Offers</a><a href="#/contact">Contact</a></nav>
+                <a class="bb-header-cart" href="#/cart" aria-label="Open shopping cart">Cart <span
+                        aria-hidden="true">↗</span></a>
+            </div>
+        </header>
+        <main id="bb-main" aria-live="polite"></main>
+        <a class="bb-cart-shortcut" href="#/cart" aria-label="Open shopping cart">🛒 Cart <span
+                id="bb-cart-count">0</span></a>
+        <div class="bb-toast" id="bb-toast" role="status" aria-live="polite"></div>
+        <div class="bb-lightbox" id="bb-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+            <button type="button" id="bb-lightbox-close" aria-label="Close image">×</button><img id="bb-lightbox-image"
+                alt="Expanded gallery view"></div>
+    </div>
+    <script>
+        (function () {
+            'use strict';
+            const root = document.getElementById('brewBloomApp'); if (!root || root.dataset.initialized === 'yes') return; root.dataset.initialized = 'yes';
+            const main = root.querySelector('#bb-main'), toast = root.querySelector('#bb-toast');
+            const money = n => new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(n);
+            const img = (id, w = 700) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=82`;
+            const photoCoffee = img('photo-1509042239860-f550ce710b93'), photoCafe = img('photo-1442512595331-e89e73853f31'), photoPour = img('photo-1495474472287-4d71bcdd2085'), photoPastry = img('photo-1509440159596-0249088772ff'), photoBeans = img('photo-1559056199-641a0ac8b55e');
+            const products = [
+                ['Espresso', 'A short, intense shot with a rich crema.', 'Hot Coffee', 450, 'photo-1510707577719-ae7c14805e3a'],
+                ['Double Espresso', 'A bolder double shot for true coffee lovers.', 'Hot Coffee', 600, 'photo-1510707577719-ae7c14805e3a'],
+                ['Americano', 'Espresso softened with hot water.', 'Hot Coffee', 550, 'photo-1551030173-122aabc4489c'],
+                ['Long Black', 'Hot water and espresso with a fragrant crema.', 'Hot Coffee', 560, 'photo-1517701604599-bb29b565090c'],
+                ['Cappuccino', 'Espresso, steamed milk and airy foam.', 'Hot Coffee', 650, 'photo-1570968915860-54d5c301fa9f'],
+                ['Café Latte', 'Smooth espresso with silky steamed milk.', 'Hot Coffee', 680, 'photo-1461023058943-07fcbe16d735'],
+                ['Flat White', 'Velvety microfoam meets a balanced double shot.', 'Hot Coffee', 690, 'photo-1534778101976-62847782c213'],
+                ['Café Mocha', 'Chocolate, espresso and steamed milk.', 'Hot Coffee', 750, 'photo-1570968915860-54d5c301fa9f'],
+                ['White Chocolate Mocha', 'Creamy white chocolate with rich espresso.', 'Hot Coffee', 790, 'photo-1570968915860-54d5c301fa9f'],
+                ['Caramel Latte', 'Espresso and milk finished with caramel.', 'Hot Coffee', 760, 'photo-1461023058943-07fcbe16d735'],
+                ['Vanilla Latte', 'A soft vanilla note in a creamy latte.', 'Hot Coffee', 740, 'photo-1461023058943-07fcbe16d735'],
+                ['Hazelnut Latte', 'Toasty hazelnut and smooth espresso.', 'Hot Coffee', 760, 'photo-1461023058943-07fcbe16d735'],
+                ['Spanish Latte', 'Espresso balanced with sweet, creamy milk.', 'Hot Coffee', 780, 'photo-1461023058943-07fcbe16d735'],
+                ['Honey Latte', 'A gentle honey sweetness with warm milk.', 'Hot Coffee', 760, 'photo-1461023058943-07fcbe16d735'],
+                ['Cinnamon Latte', 'Warm cinnamon dusted over a silky latte.', 'Hot Coffee', 740, 'photo-1461023058943-07fcbe16d735'],
+                ['Cortado', 'Equal parts espresso and warm milk.', 'Hot Coffee', 590, 'photo-1510707577719-ae7c14805e3a'],
+                ['Affogato', 'Vanilla gelato drowned in a fresh espresso shot.', 'Specialty Coffee', 700, 'photo-1511920170033-f8396924c348'],
+                ['Macchiato', 'Espresso marked with a spoon of milk foam.', 'Specialty Coffee', 520, 'photo-1510707577719-ae7c14805e3a'],
+                ['Caramel Macchiato', 'Vanilla milk, espresso and caramel drizzle.', 'Specialty Coffee', 790, 'photo-1461023058943-07fcbe16d735'],
+                ['Espresso Con Panna', 'A lively espresso crowned with whipped cream.', 'Specialty Coffee', 590, 'photo-1510707577719-ae7c14805e3a'],
+                ['Ristretto', 'A short, concentrated and naturally sweet shot.', 'Specialty Coffee', 480, 'photo-1510707577719-ae7c14805e3a'],
+                ['Lungo', 'A longer espresso with a delicate finish.', 'Specialty Coffee', 500, 'photo-1510707577719-ae7c14805e3a'],
+                ['Dirty Chai Latte', 'Spiced chai meets a shot of espresso.', 'Specialty Coffee', 780, 'photo-1570968915860-54d5c301fa9f'],
+                ['Brown Sugar Latte', 'Deep brown sugar notes and creamy espresso.', 'Specialty Coffee', 790, 'photo-1461023058943-07fcbe16d735'],
+                ['Pistachio Latte', 'Nutty pistachio sweetness in a silky latte.', 'Specialty Coffee', 850, 'photo-1461023058943-07fcbe16d735'],
+                ['Salted Caramel Latte', 'Sweet caramel balanced with a touch of salt.', 'Specialty Coffee', 820, 'photo-1461023058943-07fcbe16d735'],
+                ['Tiramisu Latte', 'Coffee, cocoa and creamy dessert-inspired notes.', 'Specialty Coffee', 850, 'photo-1570968915860-54d5c301fa9f'],
+                ['Coconut Latte', 'A mellow coconut twist on a classic latte.', 'Specialty Coffee', 790, 'photo-1461023058943-07fcbe16d735'],
+                ['Iced Americano', 'Chilled espresso and water over ice.', 'Iced Coffee', 580, 'photo-1517701604599-bb29b565090c'],
+                ['Iced Latte', 'Espresso and cold milk over fresh ice.', 'Iced Coffee', 690, 'photo-1461023058943-07fcbe16d735'],
+                ['Iced Mocha', 'Chocolate, espresso and cold milk over ice.', 'Iced Coffee', 780, 'photo-1517701604599-bb29b565090c'],
+                ['Iced Caramel Latte', 'Cold latte with buttery caramel.', 'Iced Coffee', 790, 'photo-1517701604599-bb29b565090c'],
+                ['Iced Vanilla Latte', 'Chilled espresso with a mellow vanilla finish.', 'Iced Coffee', 760, 'photo-1517701604599-bb29b565090c'],
+                ['Iced Spanish Latte', 'Our creamy Spanish latte served over ice.', 'Iced Coffee', 800, 'photo-1517701604599-bb29b565090c'],
+                ['Cold Brew', 'Slow-steeped for a smooth, mellow finish.', 'Iced Coffee', 720, 'photo-1517701604599-bb29b565090c'],
+                ['Nitro-Style Cold Brew', 'Silky cold brew with a cascading, creamy texture.', 'Iced Coffee', 790, 'photo-1517701604599-bb29b565090c'],
+                ['Espresso Tonic', 'Bright espresso lifted by sparkling tonic.', 'Iced Coffee', 760, 'photo-1517701604599-bb29b565090c'],
+                ['Iced White Chocolate Mocha', 'White chocolate and espresso chilled over ice.', 'Iced Coffee', 830, 'photo-1517701604599-bb29b565090c'],
+                ['Coffee Frappé', 'A frosty blended coffee with a creamy finish.', 'Blended & Signature', 790, 'photo-1572490122747-3968b75cc699'],
+                ['Mocha Frappé', 'Blended coffee and chocolate with a soft swirl.', 'Blended & Signature', 850, 'photo-1572490122747-3968b75cc699'],
+                ['Caramel Coffee Frappé', 'Caramel blended into a chilled coffee treat.', 'Blended & Signature', 850, 'photo-1572490122747-3968b75cc699'],
+                ['Vanilla Coffee Frappé', 'Vanilla and coffee blended until silky.', 'Blended & Signature', 820, 'photo-1572490122747-3968b75cc699'],
+                ['Chocolate Coffee Shake', 'A chocolate-forward shake with espresso depth.', 'Blended & Signature', 880, 'photo-1572490122747-3968b75cc699'],
+                ['Coffee Milkshake', 'Classic coffee blended with chilled milk.', 'Blended & Signature', 820, 'photo-1572490122747-3968b75cc699'],
+                ['Brownie Coffee Shake', 'Chocolate brownie blended with coffee and milk.', 'Blended & Signature', 950, 'photo-1572490122747-3968b75cc699'],
+                ['Signature House Blend', 'A balanced house recipe with cocoa and caramel notes.', 'Blended & Signature', 750, 'photo-1559056199-641a0ac8b55e'],
+                ['Matcha Latte', 'Earthy matcha whisked with creamy milk.', 'Tea & Other Drinks', 720, 'photo-1515823064-d6e0c04616a7'],
+                ['Masala Chai', 'Black tea simmered with warming spices.', 'Tea & Other Drinks', 380, 'photo-1571934811356-5cc061b6821f'],
+                ['Hot Chocolate', 'Velvety cocoa topped with a soft cloud of foam.', 'Tea & Other Drinks', 580, 'photo-1542990253-0b8be8f3f6d5'],
+                ['Peach Iced Tea', 'Refreshing tea with bright peach notes.', 'Tea & Other Drinks', 480, 'photo-1556679343-c7306c1976bc'],
+                ['Classic Lemonade', 'Fresh, citrusy and served ice-cold.', 'Tea & Other Drinks', 420, 'photo-1513558161293-c6b0cf7c8d59'],
+                ['Butter Croissant', 'Golden, flaky pastry baked for a buttery bite.', 'Desserts & Bakery', 420, 'photo-1555507036-ab1f4038808a'],
+                ['Chocolate Brownie', 'A fudgy chocolate square with a soft centre.', 'Desserts & Bakery', 390, 'photo-1606313564200-e75d5e30476c'],
+                ['New York Cheesecake', 'Creamy cheesecake on a delicate biscuit base.', 'Desserts & Bakery', 650, 'photo-1533134242443-d4fd215305ad'],
+                ['Cinnamon Roll', 'Soft swirls of cinnamon finished with icing.', 'Desserts & Bakery', 450, 'photo-1509365465985-25d11c17e812'],
+                ['Blueberry Muffin', 'Tender muffin dotted with juicy blueberries.', 'Desserts & Bakery', 380, 'photo-1607958996333-41aef7caefaa']
+            ].map((p, i) => ({ id: i + 1, name: p[0], desc: p[1], category: p[2], price: p[3], image: img(p[4]), sizes: ['Regular', 'Large'] }));
+            let cart = readCart(), searchTerm = '', activeCategory = 'All', productDetailId = 1;
+            function readCart() { try { return JSON.parse(localStorage.getItem('bb-cart-v1') || '[]') } catch (e) { return [] } }
+            function saveCart() { try { localStorage.setItem('bb-cart-v1', JSON.stringify(cart)) } catch (e) { } }
+            function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])) }
+            function showToast(s) { toast.textContent = s; toast.classList.add('show'); clearTimeout(showToast.t); showToast.t = setTimeout(() => toast.classList.remove('show'), 2400) }
+            function go(page, extra = '') { location.hash = '#/' + page + (extra ? '/' + extra : ''); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+            function route() { const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean); return { page: parts[0] || 'home', arg: parts[1] || '' } }
+            function btn(text, page, cls = 'bb-btn', extra = '') { return `<a class="${cls}" href="#/${page}${extra ? '/' + extra : ''}">${text}</a>` }
+            function sectionTitle(eyebrow, title, desc = '') { return `<div class="bb-center" style="margin-bottom:36px"><p class="bb-eyebrow">${eyebrow}</p><h2>${title}</h2>${desc ? `<p class="bb-lead">${desc}</p>` : ''}</div>` }
+            function pageHero(eyebrow, title, desc) { return `<section class="bb-page-hero"><div class="bb-container"><div class="bb-breadcrumb"><a href="#/home">Home</a> &nbsp; / &nbsp; ${eyebrow}</div><p class="bb-eyebrow">${eyebrow}</p><h1>${title}</h1><p class="bb-lead">${desc}</p></div></section>` }
+            function productCard(p) { return `<article class="bb-card bb-product-card"><a href="#/product/${p.id}" aria-label="View ${esc(p.name)}"><div class="bb-card-image"><img src="${p.image}" alt="${esc(p.name)} — ${esc(p.desc)}" loading="lazy" decoding="async"></div></a><div class="bb-card-body"><span class="bb-pill">${esc(p.category)}</span><h3 style="margin-top:12px"><a href="#/product/${p.id}">${esc(p.name)}</a></h3><p>${esc(p.desc)}</p><div class="bb-row"><span class="bb-price">${money(p.price)}</span><button class="bb-btn bb-small" data-add="${p.id}" type="button">Add +</button></div></div></article>` }
+            function getProduct(id) { return products.find(p => p.id === Number(id)) || products[0] }
+            function cartCount() { return cart.reduce((s, i) => s + i.qty, 0) }
+            function totals() { const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0), delivery = subtotal === 0 || subtotal >= 3000 ? 0 : 250; return { subtotal, delivery, total: subtotal + delivery } }
+            function footer() { return `<footer class="bb-footer-preview"><div class="bb-container"><div class="bb-row"><div><h3 style="color:#fff8ef">Brew & Bloom</h3><p>Thoughtfully brewed. Beautifully shared.</p></div><div style="display:flex;gap:16px;flex-wrap:wrap"><a href="#/menu">Menu</a><a href="#/about">Our Story</a><a href="#/contact">Contact</a><a href="#/privacy">Privacy</a><a href="#/terms">Terms</a></div></div><p style="margin:20px 0 0">© ${new Date().getFullYear()} Brew & Bloom Coffee House ·</p></div></footer>` }
+            function renderHome() {
+                return `<section class="bb-hero"><div class="bb-container"><div class="bb-hero-inner bb-reveal"><p class="bb-eyebrow">A little ritual. A lot of heart.</p><h1>Find your<br><em>happy place</em><span class="bb-steam"> ☕</span></h1><p>Slow mornings, meaningful conversations and beautifully made coffee. Your next favourite cup is waiting at Brew & Bloom.</p><div class="bb-hero-actions">${btn('Order your coffee', 'shop')} ${btn('Explore our menu', 'menu', 'bb-btn bb-light')}</div><div class="bb-trust"><span>Freshly prepared</span><span>Thoughtfully sourced</span><span>Made with care</span></div></div></div></section>
+<section class="bb-section"><div class="bb-container">${sectionTitle('Made for your moment', 'Meet your new favourites', 'From the first espresso of the day to a slow afternoon latte, there is a little something for every kind of coffee mood.')}<div class="bb-grid bb-grid-4">${[products[4], products[5], products[34], products[40]].map(productCard).join('')}</div><div class="bb-center" style="margin-top:32px">${btn('Explore the full menu', 'menu', 'bb-btn bb-light')}</div></div></section>
+<section class="bb-section bb-soft"><div class="bb-container"><div class="bb-grid bb-grid-3">${[['☕', 'Hot Coffee', 'Comforting classics, carefully pulled espresso and silky steamed milk.'], ['❄️', 'Iced Coffee', 'Bright, chilled and refreshing sips for sunny afternoons.'], ['🥐', 'Sweet Treats', 'Flaky pastries and indulgent bakes made for coffee breaks.']].map((c, i) => `<a class="bb-category" href="#/menu"><div class="bb-icon">${c[0]}</div><h3>${c[1]}</h3><p>${c[2]}</p></a>`).join('')}</div></div></section>
+<section class="bb-section"><div class="bb-container bb-intro-grid"><div class="bb-photo-stack"><img src="${photoPour}" alt="Fresh coffee being prepared" loading="lazy"></div><div><p class="bb-eyebrow">The Brew & Bloom way</p><h2>Good coffee.<br>Better moments.</h2><p class="bb-lead">We believe the best cups do more than wake you up. They make space for a pause, a conversation, a new idea or a familiar face.</p><p>Our approach is simple: thoughtful ingredients, careful preparation and warm hospitality in every order. Whether you are stopping by for a quick espresso or settling in with a sweet treat, you belong here.</p>${btn('Discover our story', 'story')}</div></div></section>
+<section class="bb-section bb-dark"><div class="bb-container">${sectionTitle('Crafted with intention', 'From bean to beautiful cup', 'Every step matters. We pay attention to the details so you can simply enjoy the moment.')}<div class="bb-grid bb-grid-4">${[['01', 'Choose', 'We look for beans with character, balance and a story worth sharing.'], ['02', 'Roast', 'A considered roast brings out the natural notes of each coffee.'], ['03', 'Grind', 'Fresh grinding helps preserve aroma and flavour in every brew.'], ['04', 'Brew', 'Our barista-style recipes aim for consistency, texture and delight.']].map(x => `<article><div class="bb-process-number">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p></article>`).join('')}</div></div></section>
+<section class="bb-section"><div class="bb-container">${sectionTitle('A little something extra', 'Good things come in pairs', 'Make your coffee break a moment worth looking forward to.')}<div class="bb-grid bb-grid-3"><article class="bb-offer"><span class="bb-pill">Coffee break</span><h3 style="margin-top:20px">The Morning Pair</h3><p>Any regular hot coffee with a buttery croissant.</p><strong>Preview offer · Rs. 850</strong><p style="margin-top:15px"><a class="bb-link" href="#/offers" style="color:#fff">See offer details →</a></p></article><article class="bb-offer" style="background:#79513b"><span class="bb-pill">Sweet moment</span><h3 style="margin-top:20px">Mocha & Brownie</h3><p>A chocolatey pick-me-up for the afternoon.</p><strong>Preview offer · Rs. 1,050</strong><p style="margin-top:15px"><a class="bb-link" href="#/offers" style="color:#fff">See offer details →</a></p></article><article class="bb-offer" style="background:#9a704e"><span class="bb-pill">For sharing</span><h3 style="margin-top:20px">Two Cup Ritual</h3><p>Two classic lattes made for catching up.</p><strong>Preview offer · Rs. 1,250</strong><p style="margin-top:15px"><a class="bb-link" href="#/offers" style="color:#fff">See offer details →</a></p></article></div></div></section>
+<section class="bb-section bb-soft"><div class="bb-container">${sectionTitle('Seasonal sips', 'A fresh reason to visit', 'Rotating flavour ideas for the changing seasons. Availability and prices should be confirmed by the store.')}<div class="bb-grid bb-grid-3">${[['Pistachio Cloud Latte', 'Nutty pistachio, espresso and a soft milk finish.', products[24]], ['Brown Sugar Iced Latte', 'A cool, caramel-like sweetness with espresso.', products[23]], ['Cinnamon Honey Cappuccino', 'A comforting classic with honey and warming spice.', products[13]]].map(x => `<article class="bb-card"><div class="bb-card-image"><img src="${x[2].image}" alt="${x[0]}" loading="lazy"></div><div class="bb-card-body"><p class="bb-eyebrow">Seasonal idea</p><h3>${x[0]}</h3><p>${x[1]}</p><button class="bb-btn bb-small" data-add="${x[2].id}">Add to order · ${money(x[2].price)}</button></div></article>`).join('')}</div></div></section>
+<section class="bb-section"><div class="bb-container">${sectionTitle('Kind words, in draft', 'A welcoming cup changes the day', 'These are layout placeholders only, not genuine customer reviews. Replace them with verified feedback before publishing.')}<div class="bb-grid bb-grid-3">${[['“A lovely pause in the middle of a busy day.”', 'Sample review placeholder'], ['“The latte is smooth and the atmosphere feels warm.”', 'Sample review placeholder'], ['“A sweet treat and coffee make a perfect pair.”', 'Sample review placeholder']].map(x => `<article class="bb-card"><div class="bb-card-body"><p style="color:#c58b50;font-size:1.2rem">★★★★★</p><p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--espresso)">${x[0]}</p><p class="bb-review-note">${x[1]}</p></div></article>`).join('')}</div></div></section>
+<section class="bb-section"><div class="bb-container">${sectionTitle('Inside the coffee house', 'Little moments, lovingly made', 'A glimpse of the craft, comfort and small rituals behind every cup.')}<div class="bb-gallery">${[photoCoffee, photoCafe, photoPour, photoPastry, photoBeans, img('photo-1511920170033-f8396924c348'), img('photo-1501339847302-ac426a4a7cbb'), img('photo-1495474472287-4d71bcdd2085')].map((u, i) => `<button type="button" data-lightbox="${u}" aria-label="Open gallery photo ${i + 1}"><img src="${u}" alt="Brew & Bloom coffee gallery image ${i + 1}" loading="lazy"></button>`).join('')}</div><div class="bb-center" style="margin-top:28px">${btn('View the gallery', 'gallery', 'bb-btn bb-light')}</div></div></section>
+<section class="bb-section bb-soft"><div class="bb-container"><div class="bb-newsletter"><div><p class="bb-eyebrow">Notes from our coffee corner</p><h2 style="font-size:2.1rem">A little joy in your inbox.</h2><p>Hear about seasonal sips, fresh bakes and special offers. Demo form only; connect an email service before launch.</p></div><form data-demo-form="newsletter"><label class="sr-only" for="bb-news-email">Email address</label><input id="bb-news-email" type="email" required placeholder="Your email address"><button class="bb-btn" type="submit">Sign me up</button></form></div></div></section>
+<section class="bb-section"><div class="bb-container bb-intro-grid"><div><p class="bb-eyebrow">Come say hello</p><h2>Your corner of calm.</h2><p>We would love to welcome you. Store details below are placeholders and must be replaced with the real business information.</p><p><strong>Address:</strong> Add your verified store address</p><p><strong>Hours:</strong> Mon–Sun · 9:00 AM–10:00 PM (sample hours)</p><p><strong>Phone:</strong> Add your business number</p><p><strong>Email:</strong> hello@example.com</p>${btn('Contact the team', 'contact')}</div><div class="bb-map-placeholder"><div><div style="font-size:2.4rem">⌖</div><h3>Find your coffee stop</h3><p>Add your real store address to connect Google Maps.</p><a class="bb-link" href="https://maps.google.com" target="_blank" rel="noopener">Open Google Maps →</a></div></div></div></section>
+<section class="bb-section bb-dark"><div class="bb-container bb-center"><p class="bb-eyebrow">Your next favourite is waiting</p><h2>Make room for a little joy.</h2><p class="bb-lead">Explore the menu, find your favourite, and turn an ordinary moment into a coffee moment.</p><div class="bb-hero-actions" style="justify-content:center">${btn('Order online', 'shop')} ${btn('Browse all drinks', 'menu', 'bb-btn bb-light')}</div></div></section>${footer()}`
+            }
+            function renderMenu() { let cats = ['All', ...new Set(products.map(p => p.category))]; let list = products.filter(p => (activeCategory === 'All' || p.category === activeCategory) && (p.name + ' ' + p.desc).toLowerCase().includes(searchTerm.toLowerCase())); return `${pageHero('Our menu', 'Your cup, your way.', 'Explore a generous menu of coffee classics, creative signatures, chilled favourites, tea and sweet bakery treats. Every item below uses sample pricing in PKR.')}<section class="bb-section"><div class="bb-container"><div class="bb-toolbar"><input id="bb-search" type="search" placeholder="Search drinks or treats…" value="${esc(searchTerm)}" aria-label="Search menu"><select id="bb-category" aria-label="Filter by category">${cats.map(c => `<option ${c === activeCategory ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select><span>${list.length} items</span></div><div class="bb-grid bb-grid-4" id="bb-products">${list.map(productCard).join('')}</div>${list.length === 0 ? '<div class="bb-empty">No products match your search. Try another name or category.</div>' : ''}</div></section>${footer()}` }
+            function renderShop() { return `${pageHero('Shop online', 'Your favourites, delivered.', 'Choose your coffee, customise the size, and build your order. This browser preview stores a demo cart locally; it does not submit a real order.')}<section class="bb-section"><div class="bb-container"><div class="bb-row" style="margin-bottom:25px"><div><p class="bb-eyebrow">A few popular picks</p><h2>Start with a favourite</h2></div><a class="bb-link" href="#/menu">View all 56 menu items →</a></div><div class="bb-grid bb-grid-4">${[products[5], products[12], products[34], products[52], products[4], products[40], products[47], products[54]].map(productCard).join('')}</div><div class="bb-center" style="margin-top:38px">${btn('View cart (' + cartCount() + ')', 'cart')} ${btn('Browse full menu', 'menu', 'bb-btn bb-light')}</div></div></section>${footer()}` }
+            function renderProduct(id) { let p = getProduct(id); return `${pageHero('Product details', p.name, p.desc)}<section class="bb-section"><div class="bb-container bb-intro-grid"><div><img src="${p.image}" alt="${esc(p.name)}" style="height:480px;border-radius:22px" loading="lazy"></div><div><span class="bb-pill">${esc(p.category)}</span><h2 style="margin-top:18px">${esc(p.name)}</h2><p class="bb-lead">${esc(p.desc)}</p><p>Prepared to order with carefully balanced flavour. Choose a size and add any notes for your preferred style when the production ordering system is connected.</p><div class="bb-price" style="font-size:1.5rem;margin:18px 0">${money(p.price)} <small style="font-size:.8rem;font-weight:400;color:var(--muted)">· regular size</small></div><label for="bb-detail-size">Size</label><select id="bb-detail-size"><option value="0">Regular</option><option value="100">Large (+Rs. 100)</option></select><div style="margin:20px 0"><button class="bb-btn" data-detail-add="${p.id}">Add to cart</button> <a class="bb-btn bb-light" href="#/cart">View cart</a></div><p class="bb-review-note">Image and product details are illustrative. Verify menu ingredients, allergens and prices before publishing.</p></div></div></section><section class="bb-section bb-soft"><div class="bb-container">${sectionTitle('You might also enjoy', 'More to love')}<div class="bb-grid bb-grid-4">${products.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4).map(productCard).join('')}</div></div></section>${footer()}` }
+            function renderAbout() { return `${pageHero('About us', 'A little heart in every cup.', 'Brew & Bloom is a coffee-house concept built around craft, comfort and the small moments that bring people together.')}<section class="bb-section"><div class="bb-container bb-intro-grid"><div><p class="bb-eyebrow">Why we exist</p><h2>More than a drink. A daily ritual.</h2><p class="bb-lead">We imagine a place where your morning begins gently, your afternoon finds a second wind, and every visit feels like time well spent.</p><p>Our mission is to make carefully prepared coffee feel welcoming and accessible. We value the small details: the aroma of freshly ground beans, milk steamed to a silky texture, a pastry that flakes just right, and the warmth of being greeted with care.</p><p>From a quick takeaway to a long conversation at a favourite table, our aim is simple: make room for people to pause, connect and bloom.</p></div><img src="${photoCafe}" alt="Warm coffee shop atmosphere" style="height:440px;border-radius:22px" loading="lazy"></div></section><section class="bb-section bb-soft"><div class="bb-container">${sectionTitle('Our values', 'The things we come back to', 'The principles that guide our menu and the experience we want to create.')}<div class="bb-grid bb-grid-3">${[['Care in every cup', 'Recipes are prepared with attention to balance, temperature and texture.'], ['Thoughtful choices', 'We aim to make informed ingredient and sourcing decisions as the business grows.'], ['A warm welcome', 'Good hospitality means treating every guest with patience, kindness and respect.']].map(x => `<article class="bb-card"><div class="bb-card-body"><p class="bb-eyebrow">Our promise</p><h3>${x[0]}</h3><p>${x[1]}</p></div></article>`).join('')}</div></div></section><section class="bb-section"><div class="bb-container bb-intro-grid"><img src="${photoBeans}" alt="Coffee beans ready for brewing" style="height:400px;border-radius:22px" loading="lazy"><div><p class="bb-eyebrow">Our quality philosophy</p><h2>Respect the bean. Enjoy the moment.</h2><p>Great coffee begins with choices made long before the cup reaches the counter. Bean selection, roast profile, grind size, water temperature and brew time all influence what you taste.</p><p>Our menu celebrates both familiar classics and playful signatures. We want each drink to have a clear point of view, from the bold simplicity of espresso to the mellow sweetness of a Spanish latte.</p>${btn('Explore our coffee origins', 'story')}</div></div></section><section class="bb-section bb-dark"><div class="bb-container">${sectionTitle('A team with a shared purpose', 'Good coffee is a team effort', 'Replace these team placeholders with real staff names, photographs and approved biographies.')}<div class="bb-grid bb-grid-3">${[['Barista & Craft', 'A team member who brings care and consistency to every drink.'], ['Guest Experience', 'A friendly face focused on making every visit welcoming.'], ['Kitchen & Bakery', 'A maker who helps pair your coffee with something lovely.']].map((x, i) => `<article class="bb-card"><div class="bb-card-image"><img src="${[photoCoffee, photoCafe, photoPastry][i]}" alt="Team role placeholder" loading="lazy"></div><div class="bb-card-body"><h3>${x[0]}</h3><p>${x[1]}</p><span class="bb-review-note">Replace with real team details</span></div></article>`).join('')}</div></div></section><section class="bb-section"><div class="bb-container bb-center"><p class="bb-eyebrow">Come be part of the story</p><h2>Your table is waiting.</h2>${btn('Find your next favourite', 'menu')}</div></section>${footer()}` }
+            function renderStory() { return `${pageHero('Our story & origins', 'Every bean has a journey.', 'Coffee begins with the land, the grower and the care that carries a bean all the way to your cup.')}<section class="bb-section"><div class="bb-container bb-intro-grid"><div><p class="bb-eyebrow">From origin to ritual</p><h2>A journey worth slowing down for.</h2><p>Coffee is shaped by place. Altitude, soil, rainfall, variety and processing all influence the character of a bean. Some coffees lean towards chocolate and nuts; others offer fruit, florals or a lively brightness.</p><p>At Brew & Bloom, our intended approach is to choose coffees for balance and versatility, then prepare them in ways that let their character shine. As the brand develops, this section should be updated with the actual farms, regions, roasters and sourcing commitments behind the coffee we serve.</p><p>We believe good sourcing stories should be specific and verifiable. Rather than make unconfirmed claims about farms or certifications, we leave room here for the real details from our suppliers.</p></div><img src="${photoBeans}" alt="Coffee beans close-up" style="height:470px;border-radius:22px" loading="lazy"></div></section><section class="bb-section bb-soft"><div class="bb-container bb-grid bb-grid-2"><div><p class="bb-eyebrow">The craft</p><h2>Four steps. Countless details.</h2><div class="bb-timeline"><article><h3>01 · Sourcing</h3><p>Learn the region, variety and processing method; prioritise transparent supplier information.</p></article><article><h3>02 · Roasting</h3><p>Roast development shapes sweetness, body and aroma. Different coffees need different approaches.</p></article><article><h3>03 · Grinding</h3><p>A suitable grind size helps extraction stay balanced and repeatable.</p></article><article><h3>04 · Brewing</h3><p>Water, ratio, time and technique bring the recipe together in the cup.</p></article></div></div><div><img src="${photoPour}" alt="Coffee brewing process" style="height:500px;border-radius:22px" loading="lazy"></div></div></section><section class="bb-section"><div class="bb-container bb-center"><h2>Curious about the menu?</h2><p class="bb-lead">Explore espresso classics, chilled coffee and seasonal-inspired signatures.</p>${btn('Explore the menu', 'menu')}</div></section>${footer()}` }
+            function renderOffers() { return `${pageHero('Special offers', 'A little extra to love.', 'Explore sample bundles and seasonal ideas. All offer names, prices and discounts are placeholders until confirmed by the business.')}<section class="bb-section"><div class="bb-container"><div class="bb-grid bb-grid-3">${[['The Morning Pair', 'Regular hot coffee + butter croissant', 'Rs. 850', 'A gentle start for an early morning.'], ['Mocha & Brownie', 'Café mocha + chocolate brownie', 'Rs. 1,050', 'A rich pairing for chocolate lovers.'], ['Two Cup Ritual', 'Two classic café lattes', 'Rs. 1,250', 'A catch-up made for two.'], ['Iced Afternoon', 'Iced latte + blueberry muffin', 'Rs. 950', 'A cool break with a little sweetness.'], ['House Blend Bundle', 'Signature house blend + croissant', 'Rs. 1,050', 'For a familiar, balanced coffee moment.'], ['Seasonal Sip', 'Selected seasonal drink', 'Ask in store', 'Ask the team about current seasonal availability.']].map((x, i) => `<article class="bb-card"><div class="bb-card-image"><img src="${[photoCoffee, photoPastry, photoCafe, products[30].image, photoBeans, products[24].image][i]}" alt="${x[0]}" loading="lazy"></div><div class="bb-card-body"><span class="bb-pill">Sample offer</span><h3 style="margin-top:12px">${x[0]}</h3><p>${x[1]}</p><p>${x[3]}</p><div class="bb-row"><strong>${x[2]}</strong><a class="bb-link" href="#/menu">Explore menu →</a></div></div></article>`).join('')}</div><p style="margin-top:25px;font-size:.86rem">Offer terms: sample offers are not redeemable in this preview. Before publishing, confirm availability, dates, exclusions, final pricing and any coupon rules.</p></div></section>${footer()}` }
+            function renderGallery() { const photos = [photoCoffee, photoCafe, photoPour, photoPastry, photoBeans, img('photo-1511920170033-f8396924c348'), img('photo-1501339847302-ac426a4a7cbb'), img('photo-1495474472287-4d71bcdd2085'), img('photo-1509042239860-f550ce710b93'), img('photo-1517701604599-bb29b565090c'), img('photo-1559056199-641a0ac8b55e'), img('photo-1515823064-d6e0c04616a7')]; return `${pageHero('Gallery', 'A feast for the eyes.', 'A visual moodboard of coffee, craft and comforting café moments. Images are illustrative and can be replaced with your own brand photography.')}<section class="bb-section"><div class="bb-container"><div class="bb-gallery">${photos.map((u, i) => `<button type="button" data-lightbox="${u}" aria-label="Open gallery image ${i + 1}"><img src="${u}" alt="Coffee house gallery image ${i + 1}" loading="lazy"></button>`).join('')}</div></div></section>${footer()}` }
+            function renderContact() { return `${pageHero('Contact us', 'We would love to hear from you.', 'Have a question about the menu, an order or a possible collaboration? Send a note using this demo form.')}<section class="bb-section"><div class="bb-container bb-grid bb-grid-2"><div><p class="bb-eyebrow">Say hello</p><h2>Let’s start a conversation.</h2><p>For real enquiries, connect this form to Contact Form 7 or another trusted WordPress form plugin. The demo below does not send or store messages.</p><div class="bb-grid" style="gap:14px;margin-top:26px"><article class="bb-card"><div class="bb-card-body"><h3>Visit us</h3><p>Add your real store address here.</p></div></article><article class="bb-card"><div class="bb-card-body"><h3>Call or email</h3><p>Phone: add business number<br>Email: hello@example.com</p></div></article><article class="bb-card"><div class="bb-card-body"><h3>Opening hours</h3><p>Sample hours: Monday–Sunday, 9:00 AM–10:00 PM. Please confirm before publishing.</p></div></article></div></div><div class="bb-card"><div class="bb-card-body"><h3>Send a message</h3><form data-demo-form="contact"><div class="bb-form-grid"><div class="bb-field"><label for="bb-name">Full name *</label><input id="bb-name" name="name" required autocomplete="name"></div><div class="bb-field"><label for="bb-email">Email *</label><input id="bb-email" name="email" type="email" required autocomplete="email"></div><div class="bb-field"><label for="bb-phone">Phone</label><input id="bb-phone" name="phone" type="tel" autocomplete="tel"></div><div class="bb-field"><label for="bb-subject">Subject *</label><select id="bb-subject" name="subject" required><option value="">Choose a subject</option><option>Menu question</option><option>Order enquiry</option><option>Feedback</option><option>Collaboration</option></select></div><div class="bb-field bb-full"><label for="bb-message">Message *</label><textarea id="bb-message" name="message" rows="5" required></textarea></div><div class="bb-field bb-full"><button class="bb-btn" type="submit">Send demo message</button></div></div><p class="bb-review-note">Demo only: your message is not sent to the business.</p></form></div></div></div></section><section class="bb-section bb-soft"><div class="bb-container bb-grid bb-grid-2"><div><p class="bb-eyebrow">Find us</p><h2>Plan your visit.</h2><p>Once your address is confirmed, replace this map placeholder with an official Google Maps embed and directions link.</p><a class="bb-btn bb-light" href="https://maps.google.com" target="_blank" rel="noopener">Open Google Maps ↗</a></div><div class="bb-map-placeholder"><div><div style="font-size:2.5rem">⌖</div><h3>Map location placeholder</h3><p>No business address has been supplied yet.</p></div></div></div></section><section class="bb-section"><div class="bb-container">${faqMarkup(FAQs.slice(0, 4))}<div class="bb-center" style="margin-top:25px">${btn('Read all FAQs', 'faq')}</div></div></section>${footer()}` }
+            function renderCart() { let t = totals(); return `${pageHero('Shopping cart', 'Your coffee plans.', 'Review your selected items before continuing. This cart is saved in this browser only; it is not a production order system.')}<section class="bb-section"><div class="bb-container">${cart.length ? `<div class="bb-cart-layout"><div><div class="bb-row"><h2 style="font-size:1.8rem">Your items (${cartCount()})</h2><a class="bb-link" href="#/menu">Continue shopping</a></div>${cart.map((it, i) => { let p = getProduct(it.id); return `<div class="bb-cart-item"><img src="${p.image}" alt="${esc(p.name)} — ${esc(p.desc)}" loading="lazy" decoding="async"><div><h3 style="font:600 1rem Poppins;margin:0 0 5px">${esc(p.name)}</h3><p style="font-size:.85rem;margin:0">${esc(it.size || 'Regular')} · ${money(it.price)} each</p><button type="button" data-remove="${i}" style="border:0;background:none;color:#9b4b3b;padding:6px 0">Remove</button></div><div class="bb-cart-end" style="text-align:right"><div class="bb-qty"><button type="button" data-qty="${i}" data-delta="-1" aria-label="Decrease quantity">−</button><strong>${it.qty}</strong><button type="button" data-qty="${i}" data-delta="1" aria-label="Increase quantity">+</button></div><p class="bb-price" style="margin:8px 0 0">${money(it.price * it.qty)}</p></div></div>` }).join('')}</div><aside class="bb-summary"><h3>Order summary</h3><div class="bb-summary-line"><span>Subtotal</span><strong>${money(t.subtotal)}</strong></div><div class="bb-summary-line"><span>Delivery</span><strong>${t.delivery === 0 ? 'Free' : money(t.delivery)}</strong></div><p style="font-size:.8rem">Free demo delivery on orders of Rs. 3,000 or more.</p><div class="bb-summary-line total"><span>Total</span><strong>${money(t.total)}</strong></div><a href="#/checkout" class="bb-btn" style="width:100%;margin-top:16px">Continue to checkout</a></aside></div>` : `<div class="bb-empty"><div style="font-size:3rem">☕</div><h2>Your cart is taking a coffee break.</h2><p>It is empty for now. Browse the menu and add something lovely.</p>${btn('Explore the menu', 'menu')}</div>`}</div></section>${footer()}` }
+            function renderCheckout() { let t = totals(); if (!cart.length) return `${pageHero('Checkout', 'Your cart is empty.', 'Add some items before you begin checkout.')}<section class="bb-section"><div class="bb-container bb-center">${btn('Browse menu', 'menu')}</div></section>${footer()}`; return `${pageHero('Checkout', 'Almost time for coffee.', 'Enter sample details to preview the checkout flow. This is a demonstration only: no payment is taken and no real order is placed.')}<section class="bb-section"><div class="bb-container"><div class="bb-cart-layout"><form id="bb-checkout-form" class="bb-card"><div class="bb-card-body"><span class="bb-pill">DEMO CHECKOUT</span><h2 style="font-size:1.9rem;margin-top:15px">Your details</h2><div class="bb-form-grid"><div class="bb-field"><label for="co-name">Full name *</label><input id="co-name" name="name" required autocomplete="name"></div><div class="bb-field"><label for="co-email">Email *</label><input id="co-email" name="email" type="email" required autocomplete="email"></div><div class="bb-field"><label for="co-phone">Phone number *</label><input id="co-phone" name="phone" type="tel" required autocomplete="tel"></div><div class="bb-field"><label for="co-type">Order type *</label><select id="co-type" name="orderType"><option value="delivery">Home delivery</option><option value="pickup">Store pickup</option></select></div><div class="bb-field bb-full" id="co-address-wrap"><label for="co-address">Street address *</label><input id="co-address" name="address" required autocomplete="street-address"></div><div class="bb-field"><label for="co-suburb">Area / suburb *</label><input id="co-suburb" name="suburb" required autocomplete="address-level2"></div><div class="bb-field"><label for="co-city">City *</label><input id="co-city" name="city" required autocomplete="address-level1"></div><div class="bb-field bb-full"><label for="co-instructions">Delivery instructions</label><textarea id="co-instructions" name="instructions" rows="2"></textarea></div><div class="bb-field bb-full"><label for="co-payment">Payment method *</label><select id="co-payment" name="payment"><option value="cod">Cash on Delivery</option><option value="jazzcash">JazzCash</option><option value="easypaisa">Easypaisa</option></select></div></div><div id="bb-payment-instructions" class="bb-payment-box"><p><strong>Cash on Delivery — demo</strong><br>In production, the store must securely save the order and confirm delivery arrangements. No real order is created here.</p></div><p class="bb-review-note">JazzCash and Easypaisa options below only demonstrate the interface. Real payments require merchant credentials and a supported server-side gateway; never enter credentials into this page.</p><button class="bb-btn" type="submit">Place demo order · ${money(t.total)}</button><p id="bb-checkout-status" role="status"></p></div></form><aside class="bb-summary"><h3>Order summary</h3>${cart.map(it => `<div class="bb-summary-line"><span>${esc(it.name)} × ${it.qty}</span><strong>${money(it.price * it.qty)}</strong></div>`).join('')}<div class="bb-summary-line"><span>Subtotal</span><strong>${money(t.subtotal)}</strong></div><div class="bb-summary-line"><span>Delivery</span><strong>${t.delivery === 0 ? 'Free' : money(t.delivery)}</strong></div><div class="bb-summary-line total"><span>Total</span><strong>${money(t.total)}</strong></div><p style="font-size:.8rem">Prices and delivery rules are demo configuration.</p></aside></div></div></section>${footer()}` }
+            function renderConfirmation() { let data; try { data = JSON.parse(sessionStorage.getItem('bb-demo-order') || 'null') } catch (e) { } return `${pageHero('Order confirmation', 'Thank you for trying our demo.', 'This screen confirms only a browser demonstration, not a real order or payment.')}<section class="bb-section"><div class="bb-container bb-center"><div class="bb-empty"><div style="font-size:3rem">✓</div><span class="bb-pill">DEMO ONLY</span><h2 style="margin-top:18px">Your preview is complete.</h2>${data ? `<p>Demo reference: <strong>${esc(data.ref)}</strong></p><p>Demo total: <strong>${money(data.total)}</strong></p><p>Payment selection: ${esc(data.payment)}</p>` : '<p>No demo order details were found in this browser session.</p>'}<p>No payment was taken and the store has not received an order.</p>${btn('Continue browsing', 'menu')} ${btn('Return home', 'home', 'bb-btn bb-light')}</div></div></section>${footer()}` }
+            const FAQs = [
+                ['What kinds of drinks do you serve?', 'The sample menu includes espresso classics, hot and iced coffee, signature drinks, tea, non-coffee drinks and bakery treats. Confirm the final menu with the business.'],
+                ['Can I customise my drink?', 'The preview includes size choices on product detail pages. A production store can add milk choices, syrup, extra shots and decaf options using WooCommerce product add-ons or a suitable extension.'],
+                ['Do you offer delivery?', 'The demo calculates a sample delivery charge of Rs. 250 below Rs. 3,000 and free delivery at or above Rs. 3,000. Replace this with the real delivery policy and service areas.'],
+                ['Can I collect my order in store?', 'The demo checkout includes a pickup option. Production pickup availability and collection times must be configured by the store.'],
+                ['Which payment methods are available?', 'The preview shows JazzCash, Easypaisa and Cash on Delivery as demonstration choices only. Real online payments require a supported merchant integration and server-side verification.'],
+                ['How do you handle allergens?', 'Ingredient and allergen information must be supplied and verified by the business. Please contact the store before ordering if you have an allergy or dietary requirement.'],
+                ['Can I cancel or change an order?', 'Contact the store as soon as possible. Add the actual cancellation rules and contact details before launch.'],
+                ['How do I contact the coffee house?', 'Use the contact page after the business phone number, email and address have been added. The current contact form is a front-end demo.'],
+                ['Do you offer seasonal drinks?', 'Seasonal items in this preview are ideas and may not be available. Confirm the current seasonal menu with the store.'],
+                ['Are the customer reviews real?', 'No. Any testimonials in this preview are clearly marked as placeholders and should be replaced with genuine, permissioned customer feedback.']
+            ];
+            function faqMarkup(items = FAQs) { return `<div class="bb-container" style="max-width:850px">${sectionTitle('Need to know', 'Frequently asked questions', 'Helpful details about the menu, ordering and this preview website.')}<div>${items.map((f, i) => `<div class="bb-faq-item"><button type="button" aria-expanded="false" aria-controls="bb-faq-${i}" data-faq="${i}"><span>${f[0]}</span><span aria-hidden="true">＋</span></button><div class="bb-faq-answer" id="bb-faq-${i}" hidden><p>${f[1]}</p></div></div>`).join('')}</div></div>` }
+            function renderFAQ() { return `${pageHero('FAQ', 'A few helpful answers.', 'Find out more about the menu, demo ordering experience and what needs to be connected before launch.')}<section class="bb-section">${faqMarkup()}<div class="bb-center" style="margin-top:30px">${btn('Still have a question? Contact us', 'contact')}</div></section>${footer()}` }
+            const legal = {
+                privacy: { title: 'Privacy Policy', sub: 'A draft framework for how a coffee shop website may explain data use.', sections: [['Information we collect', 'Describe the personal information the real business collects through orders, contact forms, subscriptions and customer accounts. Only collect what is necessary.'], ['How information is used', 'Explain order fulfilment, customer support, service updates and any marketing that customers have consented to receive.'], ['Payments', 'Explain which trusted payment providers process transactions. Do not store card details or expose gateway secrets in front-end code.'], ['Cookies and analytics', 'List the actual cookies, analytics tools and third-party services used on the production site.'], ['Retention and security', 'Describe actual retention periods, access controls, backups and how customers can contact the business about their information.'], ['Your choices and contact', 'Add the business contact details and applicable process for privacy requests.']] },
+                terms: { title: 'Terms and Conditions', sub: 'Draft terms to review and adapt to your actual business and applicable laws.', sections: [['Website information', 'Menu items, photos, availability and sample prices in this preview are illustrative. The production website must show accurate, current information.'], ['Orders and acceptance', 'Explain when an order is accepted, how stock or menu availability is confirmed, and how the business handles order errors.'], ['Prices and offers', 'Specify currency, taxes if applicable, delivery charges, offer dates, exclusions and how promotions may be combined.'], ['Customer responsibilities', 'Explain the need to provide accurate contact and delivery information and how the store may contact a customer about an order.'], ['Limitation and changes', 'Have a qualified professional review any limitation, dispute and amendment clauses before use.'], ['Contact details', 'Add the legal business name, address and contact channel.']] },
+                delivery: { title: 'Delivery & Refund Policy', sub: 'Draft policy framework. Confirm every rule with the business before publishing.', sections: [['Delivery areas and timing', 'List actual delivery zones, opening hours, estimated delivery windows and any conditions that may affect delivery.'], ['Delivery charges', 'Replace preview calculations with your real delivery fees, minimum order amounts and free-delivery thresholds.'], ['Order issues', 'Explain how customers should report missing, incorrect, damaged or delayed items and within what timeframe.'], ['Cancellations', 'Set out when an order can be cancelled or changed, especially once preparation has begun.'], ['Refunds and replacements', 'State the actual eligibility, evidence, review process, refund method and expected processing time. Do not promise an outcome the business cannot deliver.'], ['Allergens and food safety', 'Provide verified ingredient and allergen information and a practical contact method for dietary questions.']] }
+            };
+            function renderLegal(key) { let l = legal[key]; return `${pageHero(l.title, l.title, l.sub)}<section class="bb-section"><div class="bb-container" style="max-width:850px"><div class="bb-status">DRAFT TEMPLATE — not legal advice. This text must be reviewed and customised for the real business and applicable laws before publication.</div>${l.sections.map((s, i) => `<article style="margin:28px 0"><h3>${i + 1}. ${s[0]}</h3><p>${s[1]}</p></article>`).join('')}<p><strong>Last updated:</strong> Add the actual review date.</p><p><strong>Business:</strong> Add the verified legal business name and contact details.</p>${btn('Contact us', 'contact')}</div></section>${footer()}` }
+            function render() { const count = root.querySelector('#bb-cart-count'); if (count) count.textContent = cartCount(); const r = route(); document.title = ({ 'home': 'Brew & Bloom | Coffee House', 'menu': 'Our Coffee Menu | Brew & Bloom', 'shop': 'Order Online | Brew & Bloom', 'cart': 'Shopping Cart | Brew & Bloom', 'checkout': 'Checkout Demo | Brew & Bloom', 'contact': 'Contact Us | Brew & Bloom' })[r.page] || 'Brew & Bloom Coffee House'; if (r.page === 'home') main.innerHTML = renderHome(); else if (r.page === 'menu') main.innerHTML = renderMenu(); else if (r.page === 'shop') main.innerHTML = renderShop(); else if (r.page === 'product') main.innerHTML = renderProduct(r.arg); else if (r.page === 'about') main.innerHTML = renderAbout(); else if (r.page === 'story') main.innerHTML = renderStory(); else if (r.page === 'offers') main.innerHTML = renderOffers(); else if (r.page === 'gallery') main.innerHTML = renderGallery(); else if (r.page === 'contact') main.innerHTML = renderContact(); else if (r.page === 'cart') main.innerHTML = renderCart(); else if (r.page === 'checkout') main.innerHTML = renderCheckout(); else if (r.page === 'confirmation') main.innerHTML = renderConfirmation(); else if (r.page === 'faq') main.innerHTML = renderFAQ(); else if (legal[r.page]) main.innerHTML = renderLegal(r.page); else main.innerHTML = renderHome(); if (r.page === 'menu') wireMenu(); if (r.page === 'checkout') wireCheckout(); observeReveals(); }
+            function wireMenu() { let s = root.querySelector('#bb-search'), c = root.querySelector('#bb-category'); if (s) s.addEventListener('input', () => { searchTerm = s.value; let y = window.scrollY; main.innerHTML = renderMenu(); wireMenu(); window.scrollTo(0, y) }); if (c) c.addEventListener('change', () => { activeCategory = c.value; main.innerHTML = renderMenu(); wireMenu() }) }
+            function addCart(id, priceOverride = null, size = 'Regular') { const p = getProduct(id), price = priceOverride ?? p.price; const key = String(p.id) + '|' + size; let existing = cart.find(x => x.key === key); if (existing) existing.qty++; else cart.push({ key, id: p.id, name: p.name, price, size, qty: 1 }); saveCart(); const count = root.querySelector('#bb-cart-count'); if (count) count.textContent = cartCount(); showToast(`${p.name} added — open Cart to review and checkout`) }
+            function wireCheckout() { const type = root.querySelector('#co-type'), address = root.querySelector('#co-address'), wrap = root.querySelector('#co-address-wrap'), area = root.querySelector('#co-suburb'), city = root.querySelector('#co-city'), pay = root.querySelector('#co-payment'), instructions = root.querySelector('#bb-payment-instructions'); function updateType() { const pickup = type.value === 'pickup'; wrap.style.display = pickup ? 'none' : ''; address.required = !pickup; area.required = !pickup; city.required = !pickup } function updatePay() { const v = pay.value; instructions.innerHTML = v === 'cod' ? '<p><strong>Cash on Delivery — demo</strong><br>In production, the store must securely save the order and confirm delivery arrangements. No real order is created here.</p>' : v === 'jazzcash' ? '<p><strong>JazzCash — demonstration mode</strong><br>A real payment requires a verified merchant integration. This preview does not open a gateway or collect payment.</p>' : '<p><strong>Easypaisa — demonstration mode</strong><br>A real payment requires a verified merchant integration. </p>' } type.addEventListener('change', updateType); pay.addEventListener('change', updatePay); updateType(); updatePay() }
+            function observeReveals() { if (!('IntersectionObserver' in window)) return; const els = root.querySelectorAll('.bb-card,.bb-category,.bb-intro-grid,.bb-process-number'); const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('bb-reveal'); io.unobserve(e.target) } }), { threshold: .08 }); els.forEach(el => io.observe(el)) }
+            const navToggle = root.querySelector('#bb-nav-toggle'), siteNav = root.querySelector('#bb-site-nav'); function closeMobileNav() { if (navToggle && siteNav) { navToggle.setAttribute('aria-expanded', 'false'); siteNav.classList.remove('is-open') } } if (navToggle && siteNav) { navToggle.addEventListener('click', () => { const open = navToggle.getAttribute('aria-expanded') !== 'true'; navToggle.setAttribute('aria-expanded', String(open)); siteNav.classList.toggle('is-open', open) }); siteNav.addEventListener('click', e => { if (e.target.closest('a')) closeMobileNav() }); document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav() }) } root.addEventListener('click', e => { const add = e.target.closest('[data-add]'); if (add) { addCart(add.dataset.add); return } const detail = e.target.closest('[data-detail-add]'); if (detail) { let sel = root.querySelector('#bb-detail-size'), extra = sel ? Number(sel.value) : 0; addCart(detail.dataset.detailAdd, getProduct(detail.dataset.detailAdd).price + extra, extra ? 'Large' : 'Regular'); return } const qty = e.target.closest('[data-qty]'); if (qty) { let i = Number(qty.dataset.qty); if (cart[i]) { cart[i].qty += Number(qty.dataset.delta); if (cart[i].qty <= 0) cart.splice(i, 1); saveCart(); render() } return } const rem = e.target.closest('[data-remove]'); if (rem) { cart.splice(Number(rem.dataset.remove), 1); saveCart(); render(); showToast('Item removed'); return } const faq = e.target.closest('[data-faq]'); if (faq) { const answer = root.querySelector('#' + faq.getAttribute('aria-controls')); let open = faq.getAttribute('aria-expanded') === 'true'; faq.setAttribute('aria-expanded', String(!open)); faq.querySelector('span:last-child').textContent = open ? '＋' : '−'; answer.hidden = open; return } const light = e.target.closest('[data-lightbox]'); if (light) { const lb = root.querySelector('#bb-lightbox'); root.querySelector('#bb-lightbox-image').src = light.dataset.lightbox; lb.classList.add('open'); root.querySelector('#bb-lightbox-close').focus(); return } });
+            root.addEventListener('submit', e => { const form = e.target.closest('[data-demo-form]'); if (form) { e.preventDefault(); if (!form.reportValidity()) return; form.reset(); showToast(form.dataset.demoForm === 'contact' ? 'Demo message validated — not sent.' : 'Demo subscription validated — not saved.'); return } if (e.target.id === 'bb-checkout-form') { e.preventDefault(); if (!e.target.reportValidity()) return; const fd = new FormData(e.target), t = totals(), payment = fd.get('payment'); const ref = 'DEMO-' + Math.random().toString(36).slice(2, 8).toUpperCase(); try { sessionStorage.setItem('bb-demo-order', JSON.stringify({ ref, total: t.total, payment: payment === 'cod' ? 'Cash on Delivery' : payment === 'jazzcash' ? 'JazzCash (demo)' : 'Easypaisa (demo)' })) } catch (err) { } cart = []; saveCart(); go('confirmation'); return } });
+            root.querySelector('#bb-lightbox-close').addEventListener('click', () => root.querySelector('#bb-lightbox').classList.remove('open')); root.querySelector('#bb-lightbox').addEventListener('click', e => { if (e.target.id === 'bb-lightbox') e.currentTarget.classList.remove('open') }); document.addEventListener('keydown', e => { if (e.key === 'Escape') root.querySelector('#bb-lightbox').classList.remove('open') }); window.addEventListener('hashchange', render); if (!location.hash) location.hash = '#/home'; else render();
+        })();
+    </script>
+</body>
+
+</html>
